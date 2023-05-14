@@ -1,38 +1,74 @@
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      const section2 = entry.target.querySelector('.section2');
+      const section2 = entry.target.querySelector('.secmain2');
       if (entry.isIntersecting) {
-        addAnimation('section2Animate')
+        section2On()
         return;
       }
-      deleteAnimation('section2Animate')
+      section2Off()
+       const section3 = entry.target.querySelector('.secmain3');
+       console.log("3");
+      if (entry.isIntersecting) {
+        section3On()
+        return;
+      }
+      section3Off()
+      const section4 = entry.target.querySelector('.secmain4');
+      if (entry.isIntersecting) {
+        section4On()
+        return;
+      }
+      section4Off()
     });
   });
   
-observer.observe(document.querySelector('.section2'));
+observer.observe(document.querySelector('.secmain2'));
+observer.observe(document.querySelector('.secmain3'));
+observer.observe(document.querySelector('.secmain4'));
 
-function addAnimation(nameClass) {
-    const elements = document.getElementsByClassName(nameClass)
+
+function section2On() {
+    const elements = ['sch2']
+    const animations = ['backInUp']
     for (let i = 0; i < elements.length; i++) {
-        elements.item(i).classList.add('animate__animated')
+        document.getElementsByClassName(elements[i]).item(0).classList.add(animations[i])
     }
 }
 
-function deleteAnimation(nameClass) {
-    const elements = document.getElementsByClassName(nameClass)
+function section2Off() {
+    const elements = ['sch2']
+    const animations = ['backInUp']
     for (let i = 0; i < elements.length; i++) {
-        elements.item(i).classList.remove('animate__animated')
+        document.getElementsByClassName(elements[i]).item(0).classList.remove(animations[i])
     }
 }
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+function section3On() {
+    const elements = ['sch3']
+    const animations = ['backInUp']
+    for (let i = 0; i < elements.length; i++) {
+        document.getElementsByClassName(elements[i]).item(0).classList.add(animations[i])
+    }
 }
 
-async function test() {
-    document.getElementsByClassName('animatePrueba').item(0).classList.add('animate__animated','animate__backInUp')
-    await sleep(3000);
-    document.getElementsByClassName('animatePrueba').item(0).classList.remove('animate__animated')
-    await sleep(3000);
-    document.getElementsByClassName('animatePrueba').item(0).classList.add('animate__animated')
+function section3Off() {
+    const elements = ['sch3']
+    const animations = ['backInUp']
+    for (let i = 0; i < elements.length; i++) {
+        document.getElementsByClassName(elements[i]).item(0).classList.remove(animations[i])
+    }
 }
-test()
+function section4On() {
+    const elements = ['sch4']
+    const animations = ['backInUp']
+    for (let i = 0; i < elements.length; i++) {
+        document.getElementsByClassName(elements[i]).item(0).classList.add(animations[i])
+    }
+}
+
+function section4Off() {
+    const elements = ['sch4']
+    const animations = ['backInUp']
+    for (let i = 0; i < elements.length; i++) {
+        document.getElementsByClassName(elements[i]).item(0).classList.remove(animations[i])
+    }
+}

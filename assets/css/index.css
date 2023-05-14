@@ -36,16 +36,29 @@ main {
     position: absolute;
     top: 0;
     right: 0;
+    width: 100%;
+    padding: 8px 16px;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
 }
 section {
     scroll-snap-align: start;
     height: 100vh;
+    overflow: hidden;
+    max-height: 100vh;
 }
-.center-y {
+.secmain {
+    width: 100%;
+    margin-top: 1px;
+    height: calc(100% - 2px);
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 .pp {
     width: 50vw;
+    height: auto;
     position: relative;
     border-radius: 50%;
     margin-right: 30px;

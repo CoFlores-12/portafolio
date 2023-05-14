@@ -15,11 +15,15 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
     <main id="main">
         <section >
-            <div class="bar1">
+            <div class="bar1 row">
+                <div class="barItems">
+                    <strong>cofloresf</strong>
+                </div>
                 <div class="toggleWrapper">
                     <input onclick="checkedBtn()"  type="checkbox" class="dn" id="dn">
                     <label for="dn" class="toggle">
@@ -38,14 +42,16 @@
                 </div>
                 
             </div>
-            <div class="row center-y">
+            <div class="row">
+
                 <div class="pp">
                     <img class="ppimg" width="100%" src="assets/images/sect101.png" alt="">
                     <img class="ppimg" width="100%" src="assets/images/sect102.png" alt="">
                     <img class="ppimg" width="100%" src="assets/images/sect103.png" alt="">
                     <img class="ppimg" width="100%" src="assets/images/sect104.png" alt="">
                 </div>
-                <div class="col center-y">
+
+                <div class="col">
                     <h1 class="animatePrueba ">Cesar Obeth Flores</h1>
                     <p>Programmer web</p>
                     <div class="row">
@@ -60,26 +66,19 @@
             </div>
         </section>
         <section class="section2">
-            <center>
-                <h2 class="section2Animate animate__backInUp">Deliverit</h2>
-            </center>
+            <div class="secmain2 secmain">
+                <h2 class="sch2">Skills</h2>
+
+            </div>
         </section>
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
+        <section>
+        </section>
+        <section>
+        </section>
     </main>
     <script src="assets/js/anime.min.js"></script>
     <script src="assets/js/index.js"></script>
     <script>
-        const element = document.getElementById('main')
-        element.addEventListener("scroll", (event) => {
-            
-        });
         const checkbox = document.getElementById('dn')
         function checkedBtn() {
             if (checkbox.checked) {

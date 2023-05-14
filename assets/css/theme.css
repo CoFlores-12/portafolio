@@ -10,8 +10,8 @@ body {
  }
  .theme-dark {
     --color-primary: #17ed90;
-    --color-secondary: #243133;
+    --color-secondary: #0F172A;
     --color-accent: #12cdea;
-    --font-color: #ffffff;
+    --font-color: #D1DBEE;
     --icons-color: #969696;
  }
