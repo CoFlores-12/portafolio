@@ -64,3 +64,241 @@
     animation-fill-mode: both;
     animation-name: backInUp;
   }
+
+  @keyframes bounceInLeft {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    0% {
+      opacity: 0;
+      transform: translate3d(-3000px, 0, 0) scaleX(3);
+    }
+  
+    60% {
+      opacity: 1;
+      transform: translate3d(25px, 0, 0) scaleX(1);
+    }
+  
+    75% {
+      transform: translate3d(-10px, 0, 0) scaleX(0.98);
+    }
+  
+    90% {
+      transform: translate3d(5px, 0, 0) scaleX(0.995);
+    }
+  
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .ani {
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-duration: var(--animate-duration);
+    animation-duration: var(--animate-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .bounceInLeft {
+    animation-name: bounceInLeft;
+  }
+
+  .spaceInRightM {
+    -webkit-animation-name: spaceInRight;
+    animation-name: spaceInRight;
+  }
+  @keyframes spaceInRight {
+    0% {
+      opacity: 0;
+      -webkit-transform-origin: 100% 50%;
+      transform-origin: 100% 50%;
+      -webkit-transform: scale(0.2) translate(200%, 0%);
+      transform: scale(0.2) translate(200%, 0%);
+    }
+  
+    100% {
+      opacity: 1;
+      -webkit-transform-origin: 100% 50%;
+      transform-origin: 100% 50%;
+      -webkit-transform: scale(1) translate(0%, 0%);
+      transform: scale(1) translate(0%, 0%) rotate(15deg) translateY(10%);
+    }
+  }
+
+  .spaceInLeftM {
+    -webkit-animation-name: spaceInLeft;
+    animation-name: spaceInLeft;
+  }
+  @keyframes spaceInLeft {
+    0% {
+      opacity: 0;
+      -webkit-transform-origin: 0% 50%;
+      transform-origin: 0% 50%;
+      -webkit-transform: scale(0.2) translate(-200%, 0%);
+      transform: scale(0.2) translate(-200%, 0%);
+    }
+  
+    100% {
+      opacity: 1;
+      -webkit-transform-origin: 0% 50%;
+      transform-origin: 0% 50%;
+      -webkit-transform: scale(1) translate(0%, 0%);
+      transform: scale(1) translate(0%, 0%);
+    }
+  }
+  .spaceInLeftM {
+    -webkit-animation-name: spaceInLeft;
+    animation-name: spaceInLeftM;
+  }
+  @keyframes spaceInLeftM {
+    0% {
+      opacity: 0;
+      -webkit-transform-origin: 0% 50%;
+      transform-origin: 0% 50%;
+      -webkit-transform: scale(0.2) translate(-200%, 0%);
+      transform: scale(0.2) translate(-200%, 0%);
+    }
+  
+    100% {
+      opacity: 1;
+      -webkit-transform-origin: 0% 50%;
+      transform-origin: 0% 50%;
+      -webkit-transform: scale(1) translate(0%, 0%);
+      transform: scale(1) translate(0, 0)  rotate(-15deg) translateY(10%);
+    }
+  }
+  
+
+  .boingInUp {
+    -webkit-animation-name: boingInUp;
+    animation-name: boingInUp;
+  }
+  
+  @keyframes boingInUp {
+    0% {
+      opacity: 0;
+      -webkit-transform-origin: 50% 0%;
+      transform-origin: 50% 0%;
+      -webkit-transform: perspective(800px) rotateX(-90deg);
+      transform: perspective(800px) rotateX(-90deg);
+    }
+    50% {
+      opacity: 1;
+      -webkit-transform-origin: 50% 0%;
+      transform-origin: 50% 0%;
+      -webkit-transform: perspective(800px) rotateX(50deg);
+      transform: perspective(800px) rotateX(50deg);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform-origin: 50% 0%;
+      transform-origin: 50% 0%;
+      -webkit-transform: perspective(800px) rotateX(0deg);
+      transform: perspective(800px) rotateX(0deg);
+    }
+  }
+
+  .spaceInDown {
+    -webkit-animation-name: spaceInDown;
+    animation-name: spaceInDown;
+  }
+  @keyframes spaceInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+      -webkit-transform: scale(0.2) translate(0%, 200%);
+      transform: scale(0.2) translate(0%, 200%);
+    }
+  
+    100% {
+      opacity: 1;
+      -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+      -webkit-transform: scale(1) translate(0%, 0%);
+      transform: scale(1) translate(0%, 0%);
+    }
+  }
+  
+  @keyframes jackInTheBox {
+    from {
+      opacity: 0;
+      transform: scale(0.1) rotate(30deg);
+      transform-origin: center bottom;
+    }
+  
+    50% {
+      transform: rotate(-10deg);
+    }
+  
+    70% {
+      transform: rotate(3deg);
+    }
+  
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .jackInTheBox {
+    animation-name: jackInTheBox;
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .zoomIn {
+    animation-name: zoomIn;
+  }
+
+  @keyframes zoomInLeft {
+    from {
+      opacity: 0;
+      transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  
+    60% {
+      opacity: 1;
+      transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    }
+  }
+  
+  .zoomInLeft {
+    animation-name: zoomInLeft;
+  }
+
+  @keyframes zoomInRight {
+    from {
+      opacity: 0;
+      transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  
+    60% {
+      opacity: 1;
+      transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    }
+  }
+  
+  .zoomInRight {
+    animation-name: zoomInRight;
+  }

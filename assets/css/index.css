@@ -12,6 +12,9 @@ html, body {
     display: flex;
     flex-direction: column;
 }
+.center-y {
+  align-items: center;
+}
 h1 {
     line-height: 0%;
 }
@@ -27,8 +30,7 @@ i{
 body {
     width: 100%;
     background: var(--color-secondary);
-    color: var(--font-color);
-    height: 100%;
+    color: var(--font-color) !important;
 }
 .bar1 {
     position: absolute;
@@ -40,45 +42,52 @@ body {
     justify-content: space-between;
     box-sizing: border-box;
 }
+main {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  height: 100%;
+}
 section {
-    height: 100vh;
-    overflow: hidden;
-    max-height: 100vh;
+  height: 100vh;
+  scroll-snap-align: start;
+  padding: 30px 16px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .secmain {
-    width: 100%;
-    margin-top: 1px;
-    height: calc(100% - 2px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  margin-top: 1px;
+  height: calc(100% - 2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .pp {
-    width: 50vw;
-    height: auto;
-    position: relative;
-    margin-right: 30px;
+  width: 50vw;
+  height: auto;
+  position: relative;
+  margin-right: 30px;
 }
 .ppimg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
 }
 .hid{
-  display: none !important;
+  opacity: 0 !important;
 }
-.ppimg:nth-child(2){
+.ppimg:nth-child(4){
     animation: lap 5s linear infinite both;
 }
 .ppimg:nth-child(3){
     animation: lap 5s linear 0.2s infinite both;
 }
-.ppimg:nth-child(4){
+.ppimg:nth-child(2){
     animation: lap 5s linear 2s infinite both;
 }
 
@@ -104,11 +113,11 @@ section {
     height: 30vh;
   }
   @keyframes lap {
-    0%{top: 70%;}
-    30%{top: 75%;}
-    50%{top:70%;}
-    70%{top: 68%;}
-    100%{top:70%;}
+    0%{top: 50%;}
+    30%{top: 55%;}
+    50%{top:50%;}
+    70%{top: 48%;}
+    100%{top:50%;}
   }
 }
 @keyframes lap {
@@ -123,6 +132,117 @@ section:nth-child(1) {
     justify-content: center;
     align-items: center;
     position: relative;
+    height: 100vh;
+}
+.deliveritMo {
+  width: 50%;
+  position: relative;
+  height: 40vh;
+  max-height: 40vh;
+}
+.deliveritMo > img {
+  height: 100%;
+  position: absolute;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+}
+.deliveritMo > img:nth-child(1) {
+  transform: rotate(-15deg) translateY(10px);
+  left: 10%;
+}
+.deliveritMo > img:nth-child(2) {
+  left: 50%;
+}
+.deliveritMo > img:nth-child(3) {
+  transform: rotate(15deg) translateY(10px);
+  left: 90%;
+}
+.smd {
+  cursor: pointer;
+  font-weight: 700;
+  font-family: Helvetica,"sans-serif";
+  transition: all .2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: var(--color-accent);
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  margin-top: 10vh;
+}
+.smd > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform .3s ease-in-out;
+}
+
+.smd:hover svg {
+  transform: translateX(5px);
+}
+
+.smd:active {
+  transform: scale(0.95);
+}
+.ismo {
+  position: relative;
+}
+ul {
+  display: flex;
+  list-style: none;
+  padding-inline-start: 0px;
+  transition: all 1s ease;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+.ismo > i {
+  position: absolute;
+}
+.ismo > i:nth-child(1) {
+  top: 50%;
+  left: -100%;
+}
+.ismo > i:nth-child(5) {
+  top: 50%;
+  left: 190%;
+}
+.slider1 {
+  width: calc(40vh / (20/9));
+  margin-top: 10vh;
+  height: 40vh;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 3px 10px 15px 0px rgba(0,0,0,0.4);
+  opacity: 0.5;
+  position: absolute;
+  left: -75%;
+  transform: scale(0.8);
+}
+.slider2 {
+  width: calc(40vh / (20/9));
+  margin-top: 10vh;
+  height: 40vh;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 3px 10px 15px 0px rgba(0,0,0,0.4);
+  opacity: 0.5;
+  position: absolute;
+  left: 75%;
+  top: 0;
+  z-index: -10;
+  transform: scale(0.8);
+}
+.slider {
+  width: calc(40vh / (20/9));
+  margin-top: 10vh;
+  height: 40vh;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 3px 10px 15px 0px rgba(0,0,0,0.4);
+}
+
+li > img {
+  height: 40vh;
+  border-radius: 3px;
 }
 .toggleWrapper {
     position: relative;
