@@ -1,74 +1,21 @@
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      const section2 = entry.target.querySelector('.secmain2');
-      if (entry.isIntersecting) {
-        section2On()
-        return;
-      }
-      section2Off()
-       const section3 = entry.target.querySelector('.secmain3');
-       console.log("3");
-      if (entry.isIntersecting) {
-        section3On()
-        return;
-      }
-      section3Off()
-      const section4 = entry.target.querySelector('.secmain4');
-      if (entry.isIntersecting) {
-        section4On()
-        return;
-      }
-      section4Off()
-    });
-  });
-  
-observer.observe(document.querySelector('.secmain2'));
-observer.observe(document.querySelector('.secmain3'));
-observer.observe(document.querySelector('.secmain4'));
+const elements = document.getElementsByClassName('ani')
 
+document.addEventListener('scroll', function (event) {
+    checkElements();
+}, true /*Capture event*/);
 
-function section2On() {
-    const elements = ['sch2']
-    const animations = ['backInUp']
+function checkElements() {
+    const trigger = window.innerHeight;
     for (let i = 0; i < elements.length; i++) {
-        document.getElementsByClassName(elements[i]).item(0).classList.add(animations[i])
+        const elem = elements.item(i);
+        if (elem.getBoundingClientRect().top < trigger) {
+            elem.classList.remove('hid')
+            elem.classList.add(elem.getAttribute('ani'))
+        }else{
+            elem.classList.add('hid')
+            elem.classList.remove(elem.getAttribute('ani'))
+        }
     }
 }
 
-function section2Off() {
-    const elements = ['sch2']
-    const animations = ['backInUp']
-    for (let i = 0; i < elements.length; i++) {
-        document.getElementsByClassName(elements[i]).item(0).classList.remove(animations[i])
-    }
-}
-function section3On() {
-    const elements = ['sch3']
-    const animations = ['backInUp']
-    for (let i = 0; i < elements.length; i++) {
-        document.getElementsByClassName(elements[i]).item(0).classList.add(animations[i])
-    }
-}
-
-function section3Off() {
-    const elements = ['sch3']
-    const animations = ['backInUp']
-    for (let i = 0; i < elements.length; i++) {
-        document.getElementsByClassName(elements[i]).item(0).classList.remove(animations[i])
-    }
-}
-function section4On() {
-    const elements = ['sch4']
-    const animations = ['backInUp']
-    for (let i = 0; i < elements.length; i++) {
-        document.getElementsByClassName(elements[i]).item(0).classList.add(animations[i])
-    }
-}
-
-function section4Off() {
-    const elements = ['sch4']
-    const animations = ['backInUp']
-    for (let i = 0; i < elements.length; i++) {
-        document.getElementsByClassName(elements[i]).item(0).classList.remove(animations[i])
-    }
-}
+$(document).on("scroll", checkElements());

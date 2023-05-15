@@ -4,14 +4,14 @@ body {
 .theme-light {
     --color-primary: #0060df;
     --color-secondary: #fbfbfe;
-    --color-accent: #fd6f53;
+    --color-accent: #238636;
     --font-color: #000000;
     --icons-color: #000;
  }
  .theme-dark {
     --color-primary: #17ed90;
     --color-secondary: #0F172A;
-    --color-accent: #12cdea;
+    --color-accent: #238636;
     --font-color: #D1DBEE;
     --icons-color: #969696;
  }

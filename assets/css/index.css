@@ -24,13 +24,11 @@ i{
     margin-right: 16px;
     color: var(--icons-color);
 }
-main {
+body {
     width: 100%;
     background: var(--color-secondary);
     color: var(--font-color);
     height: 100%;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
 }
 .bar1 {
     position: absolute;
@@ -43,7 +41,6 @@ main {
     box-sizing: border-box;
 }
 section {
-    scroll-snap-align: start;
     height: 100vh;
     overflow: hidden;
     max-height: 100vh;
@@ -60,14 +57,20 @@ section {
     width: 50vw;
     height: auto;
     position: relative;
-    border-radius: 50%;
     margin-right: 30px;
 }
 .ppimg {
     position: absolute;
-    top: -90%;
-    left: 0px;
+    top: 50%;
+    left: 50%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+}
+.hid{
+  display: none !important;
 }
 .ppimg:nth-child(2){
     animation: lap 5s linear infinite both;
@@ -78,12 +81,42 @@ section {
 .ppimg:nth-child(4){
     animation: lap 5s linear 2s infinite both;
 }
+
+.skills {
+  flex-wrap: wrap;
+  max-width: 60vw;
+}
+.skill {
+  color: var(--color-accent);
+  outline: 1px solid var(--color-accent);
+  border-radius: 10px;
+  padding: 10px 8px;
+  margin: 10px;
+  box-sizing: border-box;
+  background-color: #2386372f;
+  box-shadow: 3px 1px 16px 1px #2386374b;
+}
+@media (max-width: 700px) {
+  .secmain1 > div:nth-child(2) {
+    flex-direction: column;
+  }
+  .pp {
+    height: 30vh;
+  }
+  @keyframes lap {
+    0%{top: 70%;}
+    30%{top: 75%;}
+    50%{top:70%;}
+    70%{top: 68%;}
+    100%{top:70%;}
+  }
+}
 @keyframes lap {
-    0%{top: -90%;}
-    30%{top: -83%;}
-    50%{top:-90%;}
-    70%{top:-95%;}
-    100%{top:-90%;}
+    0%{top: 50%;}
+    30%{top: 55%;}
+    50%{top:50%;}
+    70%{top: 48%;}
+    100%{top:50%;}
 }
 section:nth-child(1) {
     display: flex;
@@ -94,8 +127,8 @@ section:nth-child(1) {
 .toggleWrapper {
     position: relative;
     overflow: hidden;
-    right: 16px;
-    top: 8px;
+    right: 0px;
+    top: 0px;
     padding: 0 0px;
     color: white;
     transform: scale(0.7);

@@ -18,8 +18,7 @@
   <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
-    <main id="main">
-        <section >
+        <section class="secmain1">
             <div class="bar1 row">
                 <div class="barItems">
                     <strong>cofloresf</strong>
@@ -45,10 +44,10 @@
             <div class="row">
 
                 <div class="pp">
-                    <img class="ppimg" width="100%" src="assets/images/sect101.png" alt="">
-                    <img class="ppimg" width="100%" src="assets/images/sect102.png" alt="">
-                    <img class="ppimg" width="100%" src="assets/images/sect103.png" alt="">
-                    <img class="ppimg" width="100%" src="assets/images/sect104.png" alt="">
+                        <img class="ppimg" width="100%" src="assets/images/sect101.png" alt="">
+                        <img class="ppimg" width="100%" src="assets/images/sect102.png" alt="">
+                        <img class="ppimg" width="100%" src="assets/images/sect103.png" alt="">
+                        <img class="ppimg" width="100%" src="assets/images/sect104.png" alt="">
                 </div>
 
                 <div class="col">
@@ -66,17 +65,33 @@
             </div>
         </section>
         <section class="section2">
-            <div class="secmain2 secmain">
-                <h2 class="sch2">Skills</h2>
-
+            <div class="secmain2 secmain col">
+                <h2 class="sch2 ani" ani="backInUp">Skills</h2>
+                <div class="skills row">
+                    <div class="skill ani" ani="vanishIn"><span>Javascript</span></div>
+                    <div class="skill ani" ani="vanishIn" style="animation-delay: 0.25s;"><span>CSS</span></div>
+                    <div class="skill ani" ani="vanishIn" style="animation-delay: 0.5s;"><span>HTML</span> </div>
+                    <div class="skill ani" ani="vanishIn" style="animation-delay: 0.75s;"><span>Python</span> </div>
+                    <div class="skill ani" ani="vanishIn" style="animation-delay: 1s;"><span>Java</span> </div>
+                    <div class="skill ani" ani="vanishIn" style="animation-delay: 1.25s;"><span>GoLang</span> </div>
+                    <div class="skill ani" ani="vanishIn" style="animation-delay: 1.5s;"><span>NodeJS</span> </div>
+                    <div class="skill ani" ani="vanishIn" style="animation-delay: 1.75s;"><span>Typescript</span> </div>
+                    <div class="skill ani" ani="vanishIn" style="animation-delay: 2s;"><span>C#</span> </div>
+                    <div class="skill ani" ani="vanishIn" style="animation-delay: 2.25s;"><span>C++</span> </div>
+                    <div class="skill ani" ani="vanishIn" style="animation-delay: 2.5s;"><span>VB</span> </div>
+                    <div class="skill ani" ani="vanishIn" style="animation-delay: 2.75s;"><span>Flutter</span> </div>
+                </div>
             </div>
         </section>
         <section>
         </section>
         <section>
         </section>
-    </main>
-    <script src="assets/js/anime.min.js"></script>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="assets/js/index.js"></script>
     <script>
         const checkbox = document.getElementById('dn')
