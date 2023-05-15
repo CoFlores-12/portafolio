@@ -36,6 +36,7 @@ function disableScene(section) {
 
 let currentSlide = 0;
 let imageCount = document.querySelectorAll(".imgsli");
+const vw = document.querySelector('.slider').clientWidth;
 
 function startSlider() {
     
@@ -53,11 +54,10 @@ function startSlider() {
     let images = document.querySelector(".ul2");
     let images2 = document.querySelector(".ul1");
     let images3 = document.querySelector(".ul3");
-    const vh = (document.documentElement.clientHeight*0.4)/(20/9);
   
-  images.style.transform = `translateX(-${currentSlide * (vh)}px)`;
-  images2.style.transform = `translateX(-${currentSlide * (vh)}px)`;
-  images3.style.transform = `translateX(-${currentSlide * (vh)}px)`;
+  images.style.transform = `translateX(-${currentSlide * (vw)}px)`;
+  images2.style.transform = `translateX(-${currentSlide * (vw)}px)`;
+  images3.style.transform = `translateX(-${currentSlide * (vw)}px)`;
 
 }
 
@@ -70,10 +70,9 @@ function prevSlide() {
       let images = document.querySelector(".ul2");
       let images2 = document.querySelector(".ul1");
       let images3 = document.querySelector(".ul3");
-      const vh = (document.documentElement.clientHeight*0.4)/(20/9);
-      images.style.transform = `translateX(-${currentSlide * (vh)}px)`;
-    images2.style.transform = `translateX(-${currentSlide * (vh)}px)`;
-    images3.style.transform = `translateX(-${currentSlide * (vh)}px)`;
+      images.style.transform = `translateX(-${currentSlide * (vw)}px)`;
+    images2.style.transform = `translateX(-${currentSlide * (vw)}px)`;
+    images3.style.transform = `translateX(-${currentSlide * (vw)}px)`;
 }
 
 function nextSlide() {
@@ -85,10 +84,9 @@ function nextSlide() {
       let images = document.querySelector(".ul2");
       let images2 = document.querySelector(".ul1");
       let images3 = document.querySelector(".ul3");
-      const vh = (document.documentElement.clientHeight*0.4)/(20/9);
-      images.style.transform = `translateX(-${currentSlide * (vh)}px)`;
-      images2.style.transform = `translateX(-${currentSlide * (vh)}px)`;
-      images3.style.transform = `translateX(-${currentSlide * (vh)}px)`;
+      images.style.transform = `translateX(-${currentSlide * (vw)}px)`;
+      images2.style.transform = `translateX(-${currentSlide * (vw)}px)`;
+      images3.style.transform = `translateX(-${currentSlide * (vw)}px)`;
 }
 
 setInterval(() => {

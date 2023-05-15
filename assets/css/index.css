@@ -199,11 +199,11 @@ ul {
 }
 .ismo > i:nth-child(1) {
   top: 50%;
-  left: -100%;
+  left: -100px;
 }
 .ismo > i:nth-child(5) {
   top: 50%;
-  left: 190%;
+  right: -114px;
 }
 .slider1 {
   width: calc(40vh / (20/9));
