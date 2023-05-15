@@ -16,6 +16,8 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
   <link rel="stylesheet" href="assets/css/animations.css">
+  <meta name="apple-mobile-web-app-status-bar" content="#fbfbfe" />
+  <meta name="theme-color" content="#fbfbfe" />
 </head>
 <body>
     <main>
@@ -159,9 +161,15 @@
         function checkedBtn() {
             if (checkbox.checked) {
                 setTheme('theme-dark');
+                let color = getComputedStyle(document.documentElement)
+    .getPropertyValue('--color-secondary');
+                $("meta[name='theme-color']").attr('content', color);
                 checkbox.checked = true;
             } else {
                 setTheme('theme-light');
+                let color = getComputedStyle(document.documentElement)
+    .getPropertyValue('--color-secondary');
+                $("meta[name='theme-color']").attr('content', color);
                 checkbox.checked = false;
             }
         }
@@ -174,8 +182,14 @@
         function toggleTheme() {
         if (localStorage.getItem('theme') === 'theme-dark'){
             setTheme('theme-light');
+            let color = getComputedStyle(document.documentElement)
+    .getPropertyValue('--color-secondary');
+                $("meta[name='theme-color']").attr('content', color);
         } else {
             setTheme('theme-dark');
+            let color = getComputedStyle(document.documentElement)
+    .getPropertyValue('--color-secondary');
+                $("meta[name='theme-color']").attr('content', color);
         }
         }
         // Immediately invoked function to set the theme on initial load
@@ -185,8 +199,14 @@
             if (localStorage.getItem('theme') === 'theme-dark') {
                 checkbox.checked = true;
                 setTheme('theme-dark');
+                let color = getComputedStyle(document.documentElement)
+    .getPropertyValue('--color-secondary');
+                $("meta[name='theme-color']").attr('content', color);
             } else {
                 setTheme('theme-light');
+                let color = getComputedStyle(document.documentElement)
+    .getPropertyValue('--color-secondary');
+                $("meta[name='theme-color']").attr('content', color);
             }
         })();
         

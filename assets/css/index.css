@@ -111,6 +111,7 @@ section {
   }
   .pp {
     height: 30vh;
+    width: 80vw;
   }
   @keyframes lap {
     0%{top: 50%;}
