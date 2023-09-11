@@ -99,11 +99,13 @@
                         <img class="ani" ani="spaceInRightM" src="assets/images/deliverit02.png" alt="">
                     </div>
                 </div>
-                <button class="smd ani" ani="boingInUp">See more details
+                <button onclick="goto('adsbq11')" class="smd ani" ani="boingInUp" >
+                    See more details
                         <svg width="34" height="34" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="37" cy="37" r="35.5" stroke="black" stroke-width="3"></circle>
                             <path d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z" fill="black"></path>
                         </svg>
+                </button>
             </div>
         </section>
         <section>
@@ -142,11 +144,33 @@
                           <i onclick="nextSlide()" class="fa-solid fa-chevron-right ani" ani="zoomInRight" style="animation-delay: 0.10s;"></i>
                     </div>
                 </div>
-                <button class="smd ani" ani="jackInTheBox">See more details
+                <button onclick="goto('adsbq12')" class="smd ani" ani="jackInTheBox">See more details
                         <svg width="34" height="34" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="37" cy="37" r="35.5" stroke="black" stroke-width="3"></circle>
                             <path d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z" fill="black"></path>
                         </svg>
+                    </button>
+            </div>
+        </section>
+        <section>
+            <div class="secmain2 secmain col">
+                <h2 class="sch2 ani" ani="backInUp">App for makeups</h2>
+                <div class="row center-y">
+                    <div class="col" style="width: 30%;">
+                        <span class="ani" ani="bounceInLeft">Allows you to show customers the makeup work that is done</span>
+                    </div>
+                    <div class="deliveritMo">
+                        <img class="ani" ani="spaceInLeftM"  src="assets/images/m (3).jpeg" alt="">
+                        <img class="ani" ani="spaceInDown" src="assets/images/m (2).jpeg" alt="">
+                        <img class="ani" ani="spaceInRightM" src="assets/images/m (1).jpeg" alt="">
+                    </div>
+                </div>
+                <button onclick="goto('adsbq21')" class="smd ani" ani="boingInUp">See more details
+                        <svg width="34" height="34" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="37" cy="37" r="35.5" stroke="black" stroke-width="3"></circle>
+                            <path d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z" fill="black"></path>
+                        </svg>
+                </button>
             </div>
         </section>
     </main>
@@ -157,6 +181,9 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="assets/js/index.js"></script>
     <script>
+        function goto(project) {
+            window.location.href = 'infoProject.html?app=main&pr='+project
+        }
         const checkbox = document.getElementById('dn')
         function checkedBtn() {
             if (checkbox.checked) {
