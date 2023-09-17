@@ -79,3 +79,26 @@ section{
 .sections{
     height: 100%;
 }
+.skills {
+    flex-wrap: wrap;
+    max-width: 60vw;
+  }
+  .skill {
+    color: var(--color-accent);
+    outline: 1px solid var(--color-accent);
+    border-radius: 10px;
+    padding: 10px 8px;
+    margin: 10px;
+    box-sizing: border-box;
+    background-color: #2386372f;
+    box-shadow: 3px 1px 16px 1px #2386374b;
+  }
+.tech {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+.hid{
+    opacity: 0 !important;
+  }

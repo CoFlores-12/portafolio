@@ -23,6 +23,13 @@
     <main>
         <div class="fi">
             <div class="maintitle">{{name}}</div>
+            <div class="maindesc">{{desc}}</div>
+            <div style="text-align: center;">
+                <h5>technologies</h5>
+                <section class="tech">
+                    
+                </section>
+            </div>
         </div>
         <div id="sections">
            
@@ -76,9 +83,14 @@
             }
             document.title = data[id].name
             $('.maintitle').html(data[id].name)
+            $('.maindesc').html(data[id].desc)
+            data[id].tech.forEach(skill => {
+                $('.tech').append(`<div class="skill ani" ani="vanishIn"><span>${skill}</span></div>`)
+            });
+            const animatios = ["slideInRight","slideInLeft","slideInUp","slideInDown"]
             data[id].sections.forEach(section => {
                 $('#sections').append(` <section class="style${section.style}">
-                <img src="${section.img}" alt="">
+                <img class="ani" ani="${animatios[section.style-1]}" src="${section.img}" alt="">
                 <p>${section.txt}</p>
             </section>`)
             });
@@ -98,6 +110,43 @@
                 let color = getComputedStyle(document.documentElement)
     .getPropertyValue('--color-secondary');
                 $("meta[name='theme-color']").attr('content', color);
+            }
+            const elements = document.getElementsByTagName('section')
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        viewScene(entry.target)
+                    }
+                        else {
+                            disableScene(entry.target)
+                            
+                        }
+                    
+                })
+            },
+            { threshold: 0
+            });
+            //
+            for (let i = 0; i < elements.length; i++) {
+                observer.observe(elements[i]);
+            } 
+
+
+            function viewScene(section) {
+                let els = $(section).find('.ani')
+                for (let i = 0; i < els.length; i++) {
+                    els[i].classList.remove('hid')
+                    els[i].classList.add(els[i].getAttribute('ani'))
+                }
+            }
+
+            function disableScene(section) {
+                let els = $(section).find('.ani')
+                for (let i = 0; i < els.length; i++) {
+                    els[i].classList.add('hid')
+                    els[i].classList.remove(els[i].getAttribute('ani'))
+                }
             }
         })();
         
