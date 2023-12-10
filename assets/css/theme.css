@@ -7,11 +7,13 @@ body {
     --color-accent: #238636;
     --font-color: #000000;
     --icons-color: #000;
- }
- .theme-dark {
-    --color-primary: #17ed90;
-    --color-secondary: #0F172A;
-    --color-accent: #238636;
-    --font-color: #D1DBEE;
-    --icons-color: #969696;
+    --border-color: #00000077;
+   }
+   .theme-dark {
+      --color-primary: #17ed90;
+      --color-secondary: #0F172A;
+      --color-accent: #238636;
+      --font-color: #D1DBEE;
+      --icons-color: #969696;
+      --border-color: #96969677;
  }

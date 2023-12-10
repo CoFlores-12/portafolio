@@ -1,4 +1,4 @@
-const elements = document.getElementsByTagName('section')
+const elements = document.getElementsByClassName('ani')
 
 document.addEventListener('scroll', function (event) {
     checkElements();
@@ -7,7 +7,7 @@ document.addEventListener('scroll', function (event) {
 function checkElements() {
     for (let i = 0; i < elements.length; i++) {
         const elem = elements.item(i);
-        if (elem.getBoundingClientRect().top >= -200 && elem.getBoundingClientRect().top < 200) {
+        if (elem.getBoundingClientRect().top >= -500 && elem.getBoundingClientRect().top < 600) {
             viewScene(elem)
         }else{
             disableScene(elem)
@@ -18,77 +18,12 @@ function checkElements() {
 checkElements();
 
 function viewScene(section) {
-    let els = $(section).find('.ani')
-    for (let i = 0; i < els.length; i++) {
-        els[i].classList.remove('hid')
-        els[i].classList.add(els[i].getAttribute('ani'))
-    }
+    section.classList.remove('hid')
+    section.classList.add(section.getAttribute('ani'))
 }
 
 function disableScene(section) {
-    let els = $(section).find('.ani')
-    for (let i = 0; i < els.length; i++) {
-        els[i].classList.add('hid')
-        els[i].classList.remove(els[i].getAttribute('ani'))
-    }
+    section.classList.add('hid')
+    section.classList.remove(section.getAttribute('ani'))
 }
 
-
-let currentSlide = 0;
-let imageCount = document.querySelectorAll(".imgsli");
-const vw = document.querySelector('.slider').clientWidth;
-
-function startSlider() {
-    
-    if (imageCount.length === 0) {
-        imageCount = document.querySelectorAll(".imgsli");
-        images.style.transform = `translateX(0px)`;
-        return;
-    }
-    if (currentSlide === imageCount.length - 1) {
-      currentSlide = 0;
-    } else {
-      currentSlide++;
-    }
-    
-    let images = document.querySelector(".ul2");
-    let images2 = document.querySelector(".ul1");
-    let images3 = document.querySelector(".ul3");
-  
-  images.style.transform = `translateX(-${currentSlide * (vw)}px)`;
-  images2.style.transform = `translateX(-${currentSlide * (vw)}px)`;
-  images3.style.transform = `translateX(-${currentSlide * (vw)}px)`;
-
-}
-
-function prevSlide() {
-    if (currentSlide ===  0) {
-        currentSlide = imageCount.length-1;
-    } else {
-          currentSlide--;
-      }
-      let images = document.querySelector(".ul2");
-      let images2 = document.querySelector(".ul1");
-      let images3 = document.querySelector(".ul3");
-      images.style.transform = `translateX(-${currentSlide * (vw)}px)`;
-    images2.style.transform = `translateX(-${currentSlide * (vw)}px)`;
-    images3.style.transform = `translateX(-${currentSlide * (vw)}px)`;
-}
-
-function nextSlide() {
-    if (currentSlide === imageCount.length - 1) {
-        currentSlide = 0;
-      } else {
-        currentSlide++;
-      }
-      let images = document.querySelector(".ul2");
-      let images2 = document.querySelector(".ul1");
-      let images3 = document.querySelector(".ul3");
-      images.style.transform = `translateX(-${currentSlide * (vw)}px)`;
-      images2.style.transform = `translateX(-${currentSlide * (vw)}px)`;
-      images3.style.transform = `translateX(-${currentSlide * (vw)}px)`;
-}
-
-setInterval(() => {
-  startSlider();
-}, 5000);
