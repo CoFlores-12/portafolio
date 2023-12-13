@@ -448,10 +448,12 @@ li > img {
   padding: 1rem;
   border-radius: 1rem;
   outline: 1px solid var(--border-color);
-  max-width: 33%;
 }
 .section { 
   width: 100%;
   overflow:  hidden;
   height: fit-content;
+}
+.skillsContainer > img {
+  width: 48px;
 }

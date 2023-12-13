@@ -7,6 +7,7 @@
     <title>Cofloresf</title>
     <link rel="stylesheet" href="assets/css/theme.css">
     <link rel="stylesheet" href="assets/css/index.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sharada&display=swap" rel="stylesheet">
@@ -43,45 +44,76 @@
                         <span class="star star--6"></span>
                     </label>
                 </div>
-                
+                <script>
+                  function goto(project) {
+                      window.location.href = 'infoProject.html?app=main&pr='+project
+                  }
+                  let checkbox = document.getElementById('dn')
+                  function checkedBtn() {
+                    checkbox = document.getElementById('dn')
+                      if (checkbox.checked) {
+                          setTheme('theme-dark');
+                          let color = getComputedStyle(document.documentElement)
+              .getPropertyValue('--color-secondary');
+                          $("meta[name='theme-color']").attr('content', color);
+                          checkbox.checked = true;
+                      } else {
+                          setTheme('theme-light');
+                          let color = getComputedStyle(document.documentElement)
+              .getPropertyValue('--color-secondary');
+                          $("meta[name='theme-color']").attr('content', color);
+                          checkbox.checked = false;
+                      }
+                  }
+                          // function to set a given theme/color-scheme
+                  function setTheme(themeName) {
+                      localStorage.setItem('theme', themeName);
+                      document.documentElement.className = themeName;
+                  }
+                  // function to toggle between light and dark theme
+                  function toggleTheme() {
+                  if (localStorage.getItem('theme') === 'theme-dark'){
+                      setTheme('theme-light');
+                      let color = getComputedStyle(document.documentElement)
+              .getPropertyValue('--color-secondary');
+                          $("meta[name='theme-color']").attr('content', color);
+                  } else {
+                      setTheme('theme-dark');
+                      let color = getComputedStyle(document.documentElement)
+              .getPropertyValue('--color-secondary');
+                          $("meta[name='theme-color']").attr('content', color);
+                  }
+                  }
+                  // Immediately invoked function to set the theme on initial load
+                  
+                  (function () {
+                      
+                      if (localStorage.getItem('theme') === 'theme-dark') {
+                        setTheme('theme-dark');
+                          checkbox.checked = true;
+                          let color = getComputedStyle(document.documentElement)
+              .getPropertyValue('--color-secondary');
+                      } else {
+                          setTheme('theme-light');
+                          let color = getComputedStyle(document.documentElement)
+              .getPropertyValue('--color-secondary');
+                      }
+                  })();
+                  
+              </script>  
             </div>
             <div class="row">
 
                 <div class="pp">
-                        <img class="ppimg" width="100%" src="assets/images/sect101.png" alt="">
-                        <img class="ppimg" width="100%" src="assets/images/sect104.png" alt="">
-                        <img class="ppimg" width="100%" src="assets/images/sect102.png" alt="">
-                        <img class="ppimg" width="100%" src="assets/images/sect103.png" alt="">
+                        <img class="ppimg" width="100%" src="assets/images/sect101.png" ani="animate__zoomIn" class="ani" title="">
+                        <img class="ppimg" width="100%" src="assets/images/sect104.png" ani="animate__zoomIn" class="ani" title="">
+                        <img class="ppimg" width="100%" src="assets/images/sect102.png" ani="animate__zoomIn" class="ani" title="">
+                        <img class="ppimg" width="100%" src="assets/images/sect103.png" ani="animate__zoomIn" class="ani" title="">
                 </div>
 
-                <div class="col">
-                    <h1 class="animatePrueba ">Cesar Obeth Flores</h1>
-                    <p class="txt-s mt-2">Software engineer</p>
-                   
-                    <div class="row txt-sm">
-                        <div class="flexcm">
-                            <div class="skill">Javascript</div> 
-                            <div class="skill">HTML</div> 
-                            <div class="skill">CSS</div> 
-                            <div class="skill">Java</div> 
-                            <div class="skill">GoLang</div> 
-                            <div class="skill">NodeJS</div> 
-                            <div class="skill">TypeScript</div> 
-                            <div class="skill">C#</div> 
-                            <div class="skill">C++</div> 
-                            <div class="skill">Visual Basic</div> 
-                            <div class="skill">Python</div> 
-                            <div class="skill">Dart</div> 
-                            <div class="skill">Flutter</div> 
-                            <div class="skill">React</div> 
-                            <div class="skill">VueJS</div> 
-                            <div class="skill">NextJS</div> 
-                            <div class="skill">Taildwind</div> 
-                            <div class="skill">Laravel</div> 
-                            <div class="skill">SpringBoot</div> 
-                            <div class="skill">Flask</div> 
-                        </div>
-                    </div>
+                <div class="col px-4">
+                    <h1 class="animatePrueba font-bold text-5xl">Cesar Obeth Flores</h1>
+                    <p class="text-xl mt-2">Software engineer</p>
                     <div class="row">
                         <a href="https://github.com/CoFlores-12">
                             <i class="fa-brands fa-github"></i>
@@ -93,13 +125,39 @@
                 </div>
             </div>
         </section>
-        <section class="section2 section p-10">
-    <div class="min-h-screen w-full flex justify-center items-center py-20">
+        <section class="section p-2 md:p-10 flex flex-col items-center">
+          <h1 class="ani text-3xl font-bold mb-5" ani="animate__bounceIn">My skills</h1>
+          <div class="grid grid-cols-4 xl:grid-cols-12 md:grid-cols-8 gap-4 skillsContainer items-center">
+            <img src="/assets/images/js.png" ani="animate__zoomIn" class="ani" ani="animate__zoomIn" class="ani" title="Javascript">
+            <img src="/assets/images/css-3.png" ani="animate__zoomIn" class="ani" title="CSS">
+            <img src="/assets/images/html-5.png" ani="animate__zoomIn" class="ani" title="HTML">
+            <img src="/assets/images/node-js.png" ani="animate__zoomIn" class="ani" title="NodeJS">
+            <img src="/assets/images/typescript.png" ani="animate__zoomIn" class="ani" title="TypeScript">
+            <img src="/assets/images/react.png" ani="animate__zoomIn" class="ani" title="React">
+            <img src="/assets/images/vue.js-logo-big.png" ani="animate__zoomIn" class="ani" title="VUE">
+            <img src="/assets/images/Next.js.png" ani="animate__zoomIn" class="ani" title="NextJS">
+            <img src="/assets/images/php.png" ani="animate__zoomIn" class="ani" title="PHP">
+            <img src="/assets/images/Laravel.png" ani="animate__zoomIn" class="ani" title="Laravel">
+            <img src="/assets/images/java.png" ani="animate__zoomIn" class="ani" title="Java">
+            <img src="/assets/images/spring-boot-logo.png" ani="animate__zoomIn" class="ani" title="SpringBoot">
+            <img src="/assets/images/python.png" ani="animate__zoomIn" class="ani" title="Python">
+            <img src="/assets/images/Flask-Framework.png" ani="animate__zoomIn" class="ani" title="Flask">
+            <img src="/assets/images/Tailwind-CSS1.png" ani="animate__zoomIn" class="ani" title="Tailwind">
+            <img src="/assets/images/dart.png" ani="animate__zoomIn" class="ani" title="Dart">
+            <img src="/assets/images/Flutter.png" ani="animate__zoomIn" class="ani" title="Flutter">
+            <img src="/assets/images/Golang-Go.png" ani="animate__zoomIn" class="ani" title="GoLang">
+            <img src="/assets/images/c-.png" ani="animate__zoomIn" class="ani" title="C++">
+            <img src="/assets/images/c-sharp.png" ani="animate__zoomIn" class="ani" title="C#">
+          </div>
+        </section>
+        <section class="section2 section p-2 md:p-10">
+          <div class="min-h-screen w-full flex flex-col justify-center items-center py-20">
+      <h1 class=" ani text-3xl font-bold mb-5" ani="animate__bounceIn">My Projects</h1>
     <div class="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0">
-      <div class="max-w-sm ani card px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500" ani="animate__bounceInLeft">
+      <div class="ani card px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500" ani="animate__fadeIn">
         <h3 class="mb-3 text-xl font-bold text-indigo-700">DeliverIt</h3>
         <div class="relative imgCard">
-          <img class="w-full rounded-xl" src="/assets/images/deli (1).jpeg" alt="Colors" />
+          <img class="w-full rounded-xl" src="/assets/images/deli (1).jpeg" />
         </div>
         <h1 class="mt-4 text-2xl font-bold cursor-pointer">platform for online commerce of various products</h1>
         <div class="my-4">
@@ -115,10 +173,10 @@
         </div>
       </div>
 
-      <div class="max-w-sm card ani px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500"  ani="animate__bounceInLeft">
+      <div class="card ani px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500"  ani="animate__fadeIn">
         <h3 class="mb-3 text-xl font-bold text-indigo-700">IS-Manager</h3>
         <div class="relative imgCard">
-          <img class="w-full rounded-xl" src="/assets/images/is03.jpeg" alt="Colors" />
+          <img class="w-full rounded-xl" src="/assets/images/is03.jpeg" />
         </div>
         <h1 class="mt-4 text-2xl font-bold cursor-pointer">assistant for your university career</h1>
         <div class="my-4">
@@ -134,10 +192,10 @@
         </div>
       </div>
 
-      <div class="max-w-sm ani card px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500"  ani="animate__bounceInRight">
+      <div class="ani card px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500"  ani="animate__fadeIn">
         <h3 class="mb-3 text-xl font-bold text-indigo-700">Class VT</h3>
         <div class="relative imgCard">
-          <img class="w-full rounded-xl" src="/assets/images/clvt01.jpeg" alt="Colors" />
+          <img class="w-full rounded-xl" src="/assets/images/clvt01.jpeg" />
         </div>
         <h1 class="mt-4 text-2xl font-bold cursor-pointer">virtual campus to manage classes</h1>
         <div class="my-4">
@@ -153,10 +211,10 @@
         </div>
       </div>
 
-      <div class="max-w-sm ani card px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500"  ani="animate__bounceInLeft">
+      <div class="ani card px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500"  ani="animate__fadeIn">
         <h3 class="mb-3 text-xl font-bold text-indigo-700">Soccer tournament</h3>
         <div class="relative imgCard">
-          <img class="w-full rounded-xl" src="/assets/images/SS (9).jpeg" alt="Colors" />
+          <img class="w-full rounded-xl" src="/assets/images/SS (9).jpeg" />
         </div>
         <h1 class="mt-4 text-2xl font-bold cursor-pointer">tournament manager</h1>
         <div class="my-4 relative">
@@ -172,10 +230,10 @@
         </div>
       </div>
 
-      <div class="max-w-sm ani card px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500"  ani="animate__bounceInRight">
+      <div class="ani card px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500"  ani="animate__fadeIn">
         <h3 class="mb-3 text-xl font-bold text-indigo-700">LinkedIn Clone</h3>
         <div class="relative imgCard">
-          <img class="w-full rounded-xl" src="/assets/images/image-007.jpg" alt="Colors" />
+          <img class="w-full rounded-xl" src="/assets/images/image-007.jpg" />
         </div>
         <h1 class="mt-4 text-2xl font-bold cursor-pointer">an imitation of the original social network</h1>
         <div class="my-4">
@@ -202,63 +260,6 @@
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="assets/js/index.js"></script>
-    <script>
-        function goto(project) {
-            window.location.href = 'infoProject.html?app=main&pr='+project
-        }
-        const checkbox = document.getElementById('dn')
-        function checkedBtn() {
-            if (checkbox.checked) {
-                setTheme('theme-dark');
-                let color = getComputedStyle(document.documentElement)
-    .getPropertyValue('--color-secondary');
-                $("meta[name='theme-color']").attr('content', color);
-                checkbox.checked = true;
-            } else {
-                setTheme('theme-light');
-                let color = getComputedStyle(document.documentElement)
-    .getPropertyValue('--color-secondary');
-                $("meta[name='theme-color']").attr('content', color);
-                checkbox.checked = false;
-            }
-        }
-                // function to set a given theme/color-scheme
-        function setTheme(themeName) {
-            localStorage.setItem('theme', themeName);
-            document.documentElement.className = themeName;
-        }
-        // function to toggle between light and dark theme
-        function toggleTheme() {
-        if (localStorage.getItem('theme') === 'theme-dark'){
-            setTheme('theme-light');
-            let color = getComputedStyle(document.documentElement)
-    .getPropertyValue('--color-secondary');
-                $("meta[name='theme-color']").attr('content', color);
-        } else {
-            setTheme('theme-dark');
-            let color = getComputedStyle(document.documentElement)
-    .getPropertyValue('--color-secondary');
-                $("meta[name='theme-color']").attr('content', color);
-        }
-        }
-        // Immediately invoked function to set the theme on initial load
-        
-        (function () {
-            
-            if (localStorage.getItem('theme') === 'theme-dark') {
-                checkbox.checked = true;
-                setTheme('theme-dark');
-                let color = getComputedStyle(document.documentElement)
-    .getPropertyValue('--color-secondary');
-                $("meta[name='theme-color']").attr('content', color);
-            } else {
-                setTheme('theme-light');
-                let color = getComputedStyle(document.documentElement)
-    .getPropertyValue('--color-secondary');
-                $("meta[name='theme-color']").attr('content', color);
-            }
-        })();
-        
-    </script>
+   
 </body>
 </html>
