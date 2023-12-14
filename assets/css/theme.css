@@ -1,5 +1,8 @@
 body {
    font-family: 'Noto Sans Sharada', sans-serif;
+   width: 100%;
+   background: var(--color-secondary);
+   color: var(--font-color) !important;
 }
 .theme-light {
     --color-primary: #0060df;
@@ -17,3 +20,7 @@ body {
       --icons-color: #969696;
       --border-color: #96969677;
  }
+
+.bg-default {
+   background-color: var(--color-secondary);
+}

@@ -27,3 +27,34 @@ function disableScene(section) {
     section.classList.remove(section.getAttribute('ani'))
 }
 
+
+function checkedBtn() {
+checkbox = document.getElementById('dn')
+    if (checkbox.checked) {
+        setTheme('theme-dark');
+        let color = getComputedStyle(document.documentElement)
+.getPropertyValue('--color-secondary');
+        $("meta[name='theme-color']").attr('content', color);
+        checkbox.checked = true;
+    } else {
+        setTheme('theme-light');
+        let color = getComputedStyle(document.documentElement)
+.getPropertyValue('--color-secondary');
+        $("meta[name='theme-color']").attr('content', color);
+        checkbox.checked = false;
+    }
+}
+// function to toggle between light and dark theme
+function toggleTheme() {
+if (localStorage.getItem('theme') === 'theme-dark'){
+    setTheme('theme-light');
+    let color = getComputedStyle(document.documentElement)
+.getPropertyValue('--color-secondary');
+        $("meta[name='theme-color']").attr('content', color);
+} else {
+    setTheme('theme-dark');
+    let color = getComputedStyle(document.documentElement)
+.getPropertyValue('--color-secondary');
+        $("meta[name='theme-color']").attr('content', color);
+}
+}

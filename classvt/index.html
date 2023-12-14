@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class VT</title>
+    <link rel="stylesheet" href="/assets/css/theme.css">
+    <script>
+        // Immediately invoked function to set the theme on initial load
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+            document.documentElement.className = themeName;
+        }
+        (function () {
+            
+            if (localStorage.getItem('theme') === 'theme-dark') {
+              setTheme('theme-dark');
+                let color = getComputedStyle(document.documentElement)
+    .getPropertyValue('--color-secondary');
+            } else {
+                setTheme('theme-light');
+                let color = getComputedStyle(document.documentElement)
+    .getPropertyValue('--color-secondary');
+            }
+        })();
+        
+    </script>  
+</head>
+<body>
+    
+</body>
+</html>

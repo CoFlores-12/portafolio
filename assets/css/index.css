@@ -27,6 +27,9 @@ i{
     margin-right: 16px;
     color: var(--icons-color);
 }
+.infoData {
+  overflow: hidden;
+}
 body {
     width: 100%;
     background: var(--color-secondary);
@@ -41,6 +44,7 @@ body {
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .secmain {
@@ -455,5 +459,5 @@ li > img {
   height: fit-content;
 }
 .skillsContainer > img {
-  width: 48px;
+  width: 56px;
 }

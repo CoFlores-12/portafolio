@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deliverit</title>
+    <link rel="stylesheet" href="/assets/css/theme.css">
+    <script>
+        // Immediately invoked function to set the theme on initial load
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+            document.documentElement.className = themeName;
+        }
+        (function () {
+            
+            if (localStorage.getItem('theme') === 'theme-dark') {
+              setTheme('theme-dark');
+                let color = getComputedStyle(document.documentElement)
+    .getPropertyValue('--color-secondary');
+            } else {
+                setTheme('theme-light');
+                let color = getComputedStyle(document.documentElement)
+    .getPropertyValue('--color-secondary');
+            }
+        })();
+        
+    </script>  
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+
+<main>
+    <section class=" dark:bg-gray-900">
+    <nav x-data="{ isOpen: false }" class="container mx-auto p-6 lg:flex lg:items-center lg:justify-between">
+        <div class="flex items-center justify-between">
+        <div>
+            <a class="text-2xl font-bold hover dark:text-white dark:hover:text-gray-300 lg:text-3xl" href="/deliverit/">DeliverIt</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="flex lg:hidden">
+            <button x-cloak @click="isOpen = !isOpen" type="button" class=" hover:text-gray-600 focus:text-gray-600 focus:outline-none dark:text-gray-200 dark:hover:text-gray-400 dark:focus:text-gray-400" aria-label="toggle menu">
+            <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+            </svg>
+
+            <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            </button>
+        </div>
+        </div>
+
+        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+        <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full bg-default px-6 py-4 shadow-md transition-all duration-300 ease-in-out dark:bg-gray-900 lg:relative lg:top-0 lg:mt-0 lg:flex lg:w-auto lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:dark:bg-transparent">
+        <div class="lg:-px-8 flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0">
+            <a class="transform transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="/">Home</a>
+            <a class="transform transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="/ismanager/">IS-Manager</a>
+            <a class="transform transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="/classvt/">Class VT</a>
+            <a class="transform transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="/soccer/">Soccer tournament</a>
+            <a class="transform transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="/linkedin/">LinkedIn Clone</a>
+        </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-6 py-16 text-center">
+        <div class="mx-auto max-w-lg">
+        <h1 class="text-3xl font-bold  dark:text-white lg:text-4xl">experience the next phase of delivery</h1>
+        <p class="mt-6 text-gray-500 dark:text-gray-300">Our delivery application is the perfect solution for those looking for convenience and variety in each order. We connect users with their favorite restaurants and stores so they can enjoy their favorite products from the comfort of their home.</p>
+        <a href="https://deliverit-client.netlify.app/"><button class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto">Start free trial</button></a>
+        </div>
+
+        <div class="mt-10 flex justify-center">
+        <img class="w-full rounded-xl object-cover lg:w-4/5" src="/assets/images/deli (1).jpeg" />
+        </div>
+    </div>
+    </section>
+
+    <section class="bg-default dark:bg-gray-900">
+    <div class="container mx-auto px-6 py-10">
+        <h1 class="text-center text-3xl font-semibold capitalize  dark:text-white lg:text-4xl">Client Views</h1>
+
+        <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-3 xl:gap-12">
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deli01.jpeg" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">Main</h2>
+        </div>
+
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deli02.jpeg" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">Login</h2>
+        </div>
+
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deliverit01.png" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">Categories</h2>
+        </div>
+
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deli05.jpeg" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">stores</h2>
+        </div>
+
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deli06.jpeg" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">products</h2>
+        </div>
+
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deli07.jpeg" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">single product</h2>
+        </div>
+
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deli03.jpeg" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">map select</h2>
+        </div>
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deli04.png" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">pay method</h2>
+        </div>
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deli08.jpeg" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">order tracking</h2>
+        </div>
+
+       
+    </div>
+    <h1 class="mt-8 text-center text-3xl font-semibold capitalize  dark:text-white lg:text-4xl">Roundsman Views</h1>
+    <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-3 xl:gap-12">
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deli (4).jpeg" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">Login</h2>
+        </div>
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deli (3).jpeg" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">orders</h2>
+        </div>
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deli (2).jpeg" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">single order</h2>
+        </div>
+        </div>
+    </div>
+    <h1 class="mt-8 text-center text-3xl font-semibold capitalize  dark:text-white lg:text-4xl">Admin Views</h1>
+    <div class="mt-8 grid grid-cols-1 gap-8 px-8">
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deli (8).jpeg" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">Orders</h2>
+        </div>
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deli (7).jpeg" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">Dealers</h2>
+        </div>
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deli (6).jpeg" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">Stores</h2>
+        </div>
+        <div>
+            <img class="w-full rounded-lg object-cover" src="/assets/images/deli (5).jpeg" alt="" />
+            <h2 class="mt-4 text-2xl font-semibold capitalize  dark:text-white">Store</h2>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+
+
+    <section class="min-h-screen ">
+    <div class="container mx-auto flex min-h-screen flex-col px-6 py-12">
+        <div class="flex-1 lg:-mx-6 lg:flex lg:items-center">
+        <div class="text-white lg:mx-6 lg:w-1/2">
+            <h1 class="text-3xl font-semibold capitalize lg:text-5xl">Get a quote</h1>
+
+            <p class="mt-6 max-w-xl">Ask us everything and we would love to hear from you</p>
+
+            <div class="mt-6 space-y-8 md:mt-8">
+            <p class="-mx-2 flex items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mx-2 h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+
+                <span class="mx-2 w-72 truncate text-white"> Tegucigalpa, Honduras </span>
+            </p>
+
+
+            <p class="-mx-2 flex items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mx-2 h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+
+                <span class="mx-2 w-72 truncate text-white">obethflores2014@gmail.com</span>
+            </p>
+            </div>
+        </div>
+
+        <div class="mt-8 lg:mx-6 lg:w-1/2">
+            <div class="mx-auto w-full overflow-hidden rounded-xl bg-default px-8 py-10 shadow-2xl dark:bg-gray-900 lg:max-w-xl">
+            <h1 class="text-2xl font-medium dark:text-gray-200">Contact form</h1>
+
+            <form class="mt-6">
+                <div class="flex-1">
+                <label class="mb-2 block text-sm text-gray-600 dark:text-gray-200">Full Name</label>
+                <input id="nameC" type="text" placeholder="John Doe" class="mt-2 block w-full rounded-md border border-gray-200 bg-default px-5 py-3 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
+                </div>
+
+                <div class="mt-6 flex-1">
+                <label class="mb-2 block text-sm text-gray-600 dark:text-gray-200">Email address</label>
+                <input id="emailC" type="email" placeholder="johndoe@example.com" class="mt-2 block w-full rounded-md border border-gray-200 bg-default px-5 py-3 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
+                </div>
+
+                <div class="mt-6 w-full">
+                <label class="mb-2 block text-sm text-gray-600 dark:text-gray-200">Message</label>
+                <textarea id="msgC" class="mt-2 block h-32 w-full rounded-md border border-gray-200 bg-default px-5 py-3 placeholder-gray-400 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300 md:h-48" placeholder="Message"></textarea>
+                </div>
+
+                <button class="mt-6 w-full transform rounded-md bg-blue-600 px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50" onclick="enviarEmail()">get in touch</button>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <footer class="bg-default dark:bg-gray-900">
+    <div class="container mx-auto px-6 py-12">
+       
+
+
+        <hr class="my-6 border-gray-200 dark:border-gray-700 md:my-10" />
+
+        <div class="flex flex-col items-center justify-between sm:flex-row">
+        <a href="/" class="text-2xl font-bold  transition-colors duration-300 hover dark:text-white dark:hover:text-gray-300">Cofloresf</a>
+
+        <p class="mt-4 text-sm text-gray-500 dark:text-gray-300 sm:mt-0">© Copyright 2024. All Rights Reserved.</p>
+        </div>
+    </div>
+    </footer>
+</main>
+<script>
+function enviarEmail() {
+  const destinatario = 'obethflores2014@gmail.com';
+  const asunto = 'Contact form';
+  const cuerpoMensaje = document.getElementById('msgC');
+
+  const mailtoLink = `mailto:${destinatario}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpoMensaje)}`;
+
+  window.location.href = mailtoLink;
+}
+
+</script>
+</body>
+</html>

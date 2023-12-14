@@ -25,10 +25,10 @@
     <main>
         <section class="secmain1">
             <div class="bar1 row">
-                <div class="barItems">
-                    <strong>cofloresf</strong>
+                <div class="barItems ani" ani="animate__fadeInLeft">
+                  <a class="text-2xl font-bold hover:text-gray-700 dark:text-white dark:hover:text-gray-300 lg:text-3xl" href="/">Cofloresf</a>
                 </div>
-                <div class="toggleWrapper">
+                <div class="toggleWrapper ani " ani="animate__fadeInRight">
                     <input onclick="checkedBtn()"  type="checkbox" class="dn" id="dn">
                     <label for="dn" class="toggle">
                         <span class="toggle__handler">
@@ -45,54 +45,19 @@
                     </label>
                 </div>
                 <script>
-                  function goto(project) {
-                      window.location.href = 'infoProject.html?app=main&pr='+project
-                  }
                   let checkbox = document.getElementById('dn')
-                  function checkedBtn() {
-                    checkbox = document.getElementById('dn')
-                      if (checkbox.checked) {
-                          setTheme('theme-dark');
-                          let color = getComputedStyle(document.documentElement)
-              .getPropertyValue('--color-secondary');
-                          $("meta[name='theme-color']").attr('content', color);
-                          checkbox.checked = true;
-                      } else {
-                          setTheme('theme-light');
-                          let color = getComputedStyle(document.documentElement)
-              .getPropertyValue('--color-secondary');
-                          $("meta[name='theme-color']").attr('content', color);
-                          checkbox.checked = false;
-                      }
-                  }
-                          // function to set a given theme/color-scheme
+                  // Immediately invoked function to set the theme on initial load
                   function setTheme(themeName) {
                       localStorage.setItem('theme', themeName);
                       document.documentElement.className = themeName;
                   }
-                  // function to toggle between light and dark theme
-                  function toggleTheme() {
-                  if (localStorage.getItem('theme') === 'theme-dark'){
-                      setTheme('theme-light');
-                      let color = getComputedStyle(document.documentElement)
-              .getPropertyValue('--color-secondary');
-                          $("meta[name='theme-color']").attr('content', color);
-                  } else {
-                      setTheme('theme-dark');
-                      let color = getComputedStyle(document.documentElement)
-              .getPropertyValue('--color-secondary');
-                          $("meta[name='theme-color']").attr('content', color);
-                  }
-                  }
-                  // Immediately invoked function to set the theme on initial load
-                  
                   (function () {
                       
                       if (localStorage.getItem('theme') === 'theme-dark') {
                         setTheme('theme-dark');
-                          checkbox.checked = true;
                           let color = getComputedStyle(document.documentElement)
               .getPropertyValue('--color-secondary');
+              checkbox.checked = true;
                       } else {
                           setTheme('theme-light');
                           let color = getComputedStyle(document.documentElement)
@@ -104,17 +69,17 @@
             </div>
             <div class="row">
 
-                <div class="pp">
-                        <img class="ppimg" width="100%" src="assets/images/sect101.png" ani="animate__zoomIn" class="ani" title="">
-                        <img class="ppimg" width="100%" src="assets/images/sect104.png" ani="animate__zoomIn" class="ani" title="">
-                        <img class="ppimg" width="100%" src="assets/images/sect102.png" ani="animate__zoomIn" class="ani" title="">
-                        <img class="ppimg" width="100%" src="assets/images/sect103.png" ani="animate__zoomIn" class="ani" title="">
+                <div class="pp ani" ani="animate__fadeIn">
+                  <img class="ppimg" width="100%" src="assets/images/sect101.png" ani="animate__zoomIn" class="ani" title="">
+                  <img class="ppimg" width="100%" src="assets/images/sect104.png" ani="animate__zoomIn" class="ani" title="">
+                  <img class="ppimg" width="100%" src="assets/images/sect102.png" ani="animate__zoomIn" class="ani" title="">
+                  <img class="ppimg" width="100%" src="assets/images/sect103.png" ani="animate__zoomIn" class="ani" title=""> 
                 </div>
 
-                <div class="col px-4">
-                    <h1 class="animatePrueba font-bold text-5xl">Cesar Obeth Flores</h1>
-                    <p class="text-xl mt-2">Software engineer</p>
-                    <div class="row">
+                <div class="col px-4 infoData">
+                    <h1 class="animatePrueba font-bold text-5xl ani" ani="animate__fadeInRightBig">Cesar Obeth Flores</h1>
+                    <p class="text-xl mt-2 ani" ani="animate__fadeInRightBig">Software engineer</p>
+                    <div class="row ani" ani="animate__fadeInUp">
                         <a href="https://github.com/CoFlores-12">
                             <i class="fa-brands fa-github"></i>
                         </a>
@@ -155,11 +120,11 @@
       <h1 class=" ani text-3xl font-bold mb-5" ani="animate__bounceIn">My Projects</h1>
     <div class="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0">
       <div class="ani card px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500" ani="animate__fadeIn">
-        <h3 class="mb-3 text-xl font-bold text-indigo-700">DeliverIt</h3>
+        <h3 class="mb-3 text-xl font-bold text-indigo-700 cursor-pointer">DeliverIt</h3>
         <div class="relative imgCard">
           <img class="w-full rounded-xl" src="/assets/images/deli (1).jpeg" />
         </div>
-        <h1 class="mt-4 text-2xl font-bold cursor-pointer">platform for online commerce of various products</h1>
+        <h1 class="mt-4 text-2xl font-bold ">platform for online commerce</h1>
         <div class="my-4">
           <div class="flex space-x-1 items-center">
             <span>
@@ -169,7 +134,7 @@
             </span>
             <p>Vanilla JS, CSS, HTML, NodeJS</p>
           </div>
-          <button class="mt-4 text-xl w-full text-white bg-indigo-700 py-2 rounded-xl shadow-lg">More details</button>
+         <a href="/deliverit/"> <button class="mt-4 text-xl w-full text-white bg-indigo-700 py-2 rounded-xl shadow-lg">More details</button></a>
         </div>
       </div>
 
@@ -188,7 +153,7 @@
             </span>
             <p>Vanilla JS, CSS, HTML, NodeJS</p>
           </div>
-          <button class="mt-4 text-xl w-full text-white bg-indigo-700 py-2 rounded-xl shadow-lg">More details</button>
+          <a href="/ismanager/"><button class="mt-4 text-xl w-full text-white bg-indigo-700 py-2 rounded-xl shadow-lg">More details</button></a>
         </div>
       </div>
 
@@ -207,7 +172,7 @@
             </span>
             <p>NextJS, React, Tailwind</p>
           </div>
-          <button class="mt-4 text-xl w-full text-white bg-indigo-700 py-2 rounded-xl shadow-lg">More details</button>
+          <a href="/classvt/"><button class="mt-4 text-xl w-full text-white bg-indigo-700 py-2 rounded-xl shadow-lg">More details</button></a>
         </div>
       </div>
 
@@ -216,7 +181,7 @@
         <div class="relative imgCard">
           <img class="w-full rounded-xl" src="/assets/images/SS (9).jpeg" />
         </div>
-        <h1 class="mt-4 text-2xl font-bold cursor-pointer">tournament manager</h1>
+        <h1 class="mt-4 text-2xl font-bold cursor-pointer">Soccer tournament manager</h1>
         <div class="my-4 relative">
           <div class="flex space-x-1 items-center">
             <span>
@@ -226,7 +191,7 @@
             </span>
             <p>Laravel, Tailwind, CSS, HTML, SpringBoot</p>
           </div>
-          <button class="mt-4 text-xl w-full text-white bg-indigo-700 py-2 rounded-xl shadow-lg">More details</button>
+          <a href="/soccer/"><button class="mt-4 text-xl w-full text-white bg-indigo-700 py-2 rounded-xl shadow-lg">More details</button></a>
         </div>
       </div>
 
@@ -245,7 +210,7 @@
             </span>
             <p>Laravel, Blade, HTML, CSS, Tailwind</p>
           </div>
-          <button class="mt-4 text-xl w-full text-white bg-indigo-700 py-2 rounded-xl shadow-lg">More details</button>
+          <a href="/linkedin/"><button class="mt-4 text-xl w-full text-white bg-indigo-700 py-2 rounded-xl shadow-lg">More details</button></a>
         </div>
       </div>
 
@@ -254,12 +219,6 @@
         </section>
        
     </main>
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="assets/js/index.js"></script>
-   
 </body>
 </html>
