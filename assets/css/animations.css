@@ -360,3 +360,6 @@
   .slideInUp {
     animation-name: slideInUp;
   }
+  .hid {
+    opacity: 0 !important;
+  }
