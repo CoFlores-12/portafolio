@@ -27,7 +27,6 @@ function disableScene(section) {
     section.classList.remove(section.getAttribute('ani'))
 }
 
-
 function checkedBtn() {
 checkbox = document.getElementById('dn')
     if (checkbox.checked) {
