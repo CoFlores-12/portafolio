@@ -7,7 +7,7 @@ document.addEventListener('scroll', function (event) {
 function checkElements() {
     for (let i = 0; i < elements.length; i++) {
         const elem = elements.item(i);
-        if (elem.getBoundingClientRect().top >= -500 && elem.getBoundingClientRect().top < 600) {
+        if (elem.getBoundingClientRect().top >= -400 && elem.getBoundingClientRect().top < 700) {
             viewScene(elem)
         }else{
             disableScene(elem)
